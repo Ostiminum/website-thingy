@@ -44,7 +44,9 @@ body {
 }
 
 .text_body {
-    width: 60%;
+    padding: 0 15px;
+    min-width: 20em;
+    max-width: 50em;
 }
 
 .party_flags {
@@ -52,6 +54,7 @@ body {
     grid-template-columns: 25% 25% 25% 25%;
     position: absolute;
     z-index: 2;
+    overflow: hidden;
 }
 
 .party_flags img {
