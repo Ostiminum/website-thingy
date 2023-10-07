@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: linear-gradient(to bottom right, #313131, #121212)
+    background-image: radial-gradient(circle, rgba(68,8,61,1) 0%, rgba(75,23,44,1) 100%);
 }
 
 .title_div {
@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-image: linear-gradient(to bottom, rgba(175, 105, 238, 0.1), rgb(0, 0, 0, 0.0))
+    background-image: linear-gradient(to bottom, rgba(252,255,124,0.2) 0%, rgba(52,0,0,0) 100%)
 }
 
 .title_div marquee {
@@ -25,7 +25,7 @@ body {
 }
 
 .title_div h1 {
-    line-height: 110%;
+    line-height: 120%;
     margin: 0;
     font-family: 'Kaushan Script', cursive;
     text-align: center;
@@ -38,9 +38,14 @@ body {
     font-family: 'JetBrains Mono', monospace;
     color: lightgray;
     text-align: justify;
+    opacity: 0%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    animation-name: content_fade-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
 }
 
 .text_body {
@@ -62,7 +67,28 @@ body {
 }
 
 #title_textOne, #title_textTwo {
+    position: relative;
+    opacity: 0;
     text-shadow: 0px 0px 50px RGBA(255, 255, 255, 0.5);
+    animation-name: title_text_entrance;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes content_fade-in {
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes title_text_entrance {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+        opacity: 100%;
+    }
 }
 
 #title_textOne {
@@ -71,6 +97,7 @@ body {
 
 #title_textTwo {
     padding-bottom: 75px;
+    animation-delay: 0.5s;
 }
 
 #author {
